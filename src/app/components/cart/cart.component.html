@@ -1,6 +1,7 @@
-<section class=" rounded-4 shadow px-40 py-10 ">
-<div class="bg-emerald-50 p-2 ">
- <div class="flex items-center justify-between">   <h1 class="py-1 text-xl ">shop cart</h1> 
+<section class=" rounded-4 shadow px-md-5 py-10 w-100 px-6  ">
+<div class="bg-emerald-50 p-2  container-fluid">
+ <div class="flex items-center justify-between">  
+     <h1 class="py-1 text-xl ">shop cart</h1> 
 <button class="me-20 text-lg bg-emerald-200 rounded-sm p-2"[routerLink]="['/order',cartdetails._id]"  > Check out</button></div>
 
     <p class="py-3 text-lg border-bottom">Total cart price:{{cartdetails.totalCartPrice|currency:'EGP'}}</p>

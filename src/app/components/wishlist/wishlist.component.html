@@ -1,5 +1,5 @@
-<section class=" rounded-4 shadow px-40 py-10 ">
-    <div class="bg-green-100 p-2">
+<section class=" rounded-4 shadow px-md-5 py-10 w-100 px-6">
+    <div class="bg-green-100 p-2  ">
         <h1 class="py-1 text-xl border-bottom">My wish list</h1>
  
         @for (item of wishdetails; track $index) {
@@ -13,8 +13,8 @@
                         <h2>{{item.price}}</h2>
                         <i (click)="removeitem(item.id)" class="fa-solid fa-trash fa-lg py-3 cursor-pointer" style="color: #de1b2f;"></i>
                     </div>
-                    <div class="">
-                        <button class="bg-green-400 btn1  w-52 py-2 " (click)="addcart(item.id)">add to cart</button>
+                    <div class="mb-20">
+                        <button class="bg-green-300 btn1    p-md-3 rounded  " (click)="addcart(item.id)">add to cart</button>
                     </div>
                 </div>
             </div>

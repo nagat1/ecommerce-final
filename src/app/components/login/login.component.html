@@ -1,6 +1,6 @@
 <section class=" ">
     <h1 class="ms-80 py-2 text-2xl">login now:</h1>
-<form [formGroup]="loginform" (ngSubmit)="loginsubmit()" class="w-50 mx-80 " >
+<form [formGroup]="loginform" (ngSubmit)="loginsubmit()" class=" w-50 mx-24 mx-md-auto" >
     <div class="mb-3">
         <label for="Input2" class="form-label">Email address</label>
         <input   [ngClass] = "{'is-valid':!loginform.get('email')?.errors&&

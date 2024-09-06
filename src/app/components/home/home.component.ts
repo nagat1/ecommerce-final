@@ -75,7 +75,21 @@ customOptionsmain: OwlOptions= {
   dots: false,
   navSpeed: 700,
   navText: ['', ''],
- items:1,
+
+ responsive: {
+  0: {
+    items: 1
+  },
+  400: {
+    items: 1
+  },
+  740: {
+    items: 1
+  },
+  940: {
+    items: 1
+  }
+},
   nav: true
 }
 

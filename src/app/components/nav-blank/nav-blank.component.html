@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary " >
+<nav class="navbar navbar-expand-lg bg-body-tertiary flex relative "  >
     <div class="container-fluid ">
       <div class="w-50 ms-5 mt-2 flex">  
         <a class="navbar-brand" routerLink="login"><img src="../../../assets/images/freshcart-logo.svg" class="w-full"></a>
-        <ul class="navbar-nav mx-0">
+        <ul class="navbar-nav mx-0 d-none d-md-flex">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="home" >home</a>
             </li>
@@ -12,9 +12,7 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="categories" >categories</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" routerLink="cart" >cart</a>
-            </li> -->
+           
             <li class="nav-item">
               <a class="nav-link" routerLink="wishlist" >Wishlist</a>
             </li>
@@ -28,23 +26,61 @@
 
       <div class="collapse navbar-collapse" id="navbarNav"class="bg-gradient flex ">
       <ul class="mt-2 flex justify-center gap-2 items-center relative">
-        <li class="nav-item block ">
+        <li class="nav-item block d-none d-md-block">
           <a class="nav-link  " routerLink="cart" routerLinkActive="" >
             <i class="fa-solid fa-cart-shopping fa-2xl text-green-300">
           </i>
         </a>
-<span class="badge bg-black  start-0 top-0   absolute">{{countnumber}}</span>
+<span class="badge bg-black  start-0 top-0   absolute  ">{{countnumber}}</span>
         </li>
-        <i class="fa-brands fa-instagram "></i>
+      <div class="d-none d-md-flex gap-2"> 
+         <i class="fa-brands fa-instagram "></i>
         <i class="fa-brands fa-facebook "></i>
         <i class="fa-brands fa-twitter "></i>
         <i class="fa-brands fa-linkedin "></i>
-        <i class="fa-brands fa-youtube "></i>
+        <i class="fa-brands fa-youtube "></i></div>
     
-        <button class="" (click)="_AuthService.logout()" >sign out</button>
+        <button class="d-none d-md-flex " (click)="_AuthService.logout()" >sign out</button>
       </ul>
   
  
       </div>
     </div>
+    <div class="">
+      <ul class="nav nav-tabs  d-md-none d-block  mt-6 ms-8 absolute top-0 right-0 bg-green-300 ">
+  
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+          <i class="fa-solid fa-bars fa-xl" style="color: #f4f5f5;"></i>
+        </a>
+        <ul class="dropdown-menu ">
+    
+          <li class="nav-item">
+            <a class="nav-link text-sm active" aria-current="page" routerLink="home" >home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-sm" routerLink="products" >products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-sm" routerLink="categories" >categories</a>
+          </li>
+      
+          <li class="nav-item">
+            <a class="nav-link text-sm" routerLink="wishlist" >Wishlist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-sm" routerLink="brands" >brands</a>
+          </li>
+          <li class="nav-item block ">
+            <a class="nav-link text-sm  " routerLink="cart" routerLinkActive="" >
+           Cart
+          </a>
+          </li>
+          <button class="" (click)="_AuthService.logout()" >sign out</button>
+
+        </ul>
+      </li>
+    
+    </ul></div>
   </nav>
+
