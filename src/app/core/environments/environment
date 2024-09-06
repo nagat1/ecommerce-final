@@ -1,0 +1,4 @@
+
+export const myenvironment={
+    baseurl:"https://ecommerce.routemisr.com"
+}

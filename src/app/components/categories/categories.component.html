@@ -1,0 +1,21 @@
+<section class=" flex  flex-wrap p-10 ">
+     
+<div class="bg-green-100 d-none  fixed  items-center justify-center  col-6  flex z-50 flex-wrap p-10 gap-5 mx-52 rounded-md shadow  shadow-green-400"#noga (click)="close()">
+       <i class="fa-solid fa-xmark fa-2xl ms-96 cursor-pointer" (click)="close()"></i>
+       @for (item of subcatlist; track $index){
+         
+            <div class="  shadow shadow-green-200 ">  
+              <h3 class=" text-xl p-2 m-3  ">{{item.name}}</h3>  
+        </div> 
+       }
+</div>
+@for (item of categorylist; track item._id) {
+ <div class="col-lg-4 "(click)="displaysub(item._id)" > 
+        <div class="p-4   col-12 flex flex-col items-center bg-white border-gray-200">
+    <img [src]="item.image" class="  product" [alt]="item.name">
+       <h3 class="text-green-300 text-xl">{{item.name}}</h3>
+       </div></div>
+}
+    
+     
+</section>

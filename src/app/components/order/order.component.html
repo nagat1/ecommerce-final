@@ -1,0 +1,84 @@
+<section class=" ">
+    <h1 class="ms-80 py-2 text-2xl">order now:</h1>
+<form [formGroup]="orderform"  class="w-50 mx-80 ">
+    <div class="mb-3">
+        <label for="Inputdetails" class="form-label">details</label>
+        <textarea   [ngClass] = "{'is-valid':!orderform.get('details')?.errors&&
+        (orderform.get('details')?.touched||orderform.get('details')?.dirty),
+    'is-invalid':orderform.get('details')?.errors&&
+    (orderform.get('details')?.touched||orderform.get('details')?.dirty)}"
+    formControlName="details" type="text" class="form-control shadow shadow-slate-400" id="Inputdetails" placeholder=""></textarea>
+        @if (orderform.get("details")?.errors&&((orderform.get("details")?.touched) ||
+        (orderform.get("details")?.dirty))) 
+        {
+            <div class="alert alert-danger w-100">
+              @if (orderform.get("details")?.getError('required')){
+                  <p>details required</p>
+              }
+       
+          @else if (orderform.get("details")?.getError('maxlength')){
+              <p>details should be less than 50char</p>
+          }
+    
+        
+    </div>}
+    </div>
+ 
+    <div class="mb-3">
+        <label for="Inputphone" class="form-label">phone</label>
+        <input   [ngClass] = "{
+    'is-valid':!orderform.get('phone')?.errors&&
+    (orderform.get('phone')?.touched||orderform.get('phone')?.dirty),
+    'is-invalid':orderform.get('phone')?.errors&&
+    (orderform.get('phone')?.touched||orderform.get('phone')?.dirty)}"
+    formControlName="phone" type="tel" class="form-control shadow shadow-slate-400" id="Inputphone" placeholder="">
+
+        @if (orderform.get("phone")?.errors&&((orderform.get("phone")?.touched)
+         ||(orderform.get("phone")?.dirty))) 
+        {
+            <div class="alert alert-danger w-100">
+              @if (orderform.get("phone")?.getError('required')){
+                  <p>phone required</p>
+              }
+              @else if (orderform.get("phone")?.getError('pattern')){
+                <p>phone should egyption phone</p>
+            }
+         
+    
+        
+    </div>}
+      </div>
+    <div class="mb-3">
+        <label for="Inputcity" class="form-label">city</label>
+        <input   [ngClass] = "{
+    'is-valid':!orderform.get('city')?.errors&&
+    (orderform.get('city')?.touched||orderform.get('city')?.dirty),
+    'is-invalid':orderform.get('city')?.errors&&
+    (orderform.get('city')?.touched||orderform.get('city')?.dirty)}"
+    formControlName="city" type="text" class="form-control shadow shadow-slate-400" id="Inputcity" placeholder="">
+
+        @if (orderform.get("city")?.errors&&((orderform.get("city")?.touched)
+         ||(orderform.get("city")?.dirty))) 
+        {
+            <div class="alert alert-danger w-100">
+              @if (orderform.get("city")?.getError('required')){
+                  <p>city required</p>
+             
+            }
+         
+    
+        
+    </div>}
+      </div>
+      
+      <div class="flex justify-end items-center  gap-1">
+       
+        <button [disabled]="orderform.invalid"  class="btn-main "  (click)="ordersubmit()"> paynow</button>
+        <button [disabled]="orderform.invalid"  class="btn-main "  (click)="cashorder()" >paycash</button>
+        <!-- <button [disabled]="orderform.invalid"  class="btn-main " routerLink="/allorders"  (click)="cashorder()">paycash</button> -->
+    </div>
+      <!-- @if(msgsuccess){
+        <p class="bg-amber-300">just wait for second</p>
+      } -->
+</form>
+</section>

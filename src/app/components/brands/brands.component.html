@@ -1,0 +1,20 @@
+<section class=" flex  flex-wrap p-10  ">
+    <div class=" d-none     items-center justify-center   col-3  flex z-50    rounded-md fixed   col-12"#noga (click)="close()">
+          <div class="  shadow shadow-red-600 bg-green-200  "> 
+                <i class="fa-solid fa-xmark fa-2xl ms-96 cursor-pointer mb-2 " style="color:black"(click)="close()"></i>
+                <img [src]='branddetails.image'    [alt]='branddetails.name' class="w-100 pt-10 object-cover">  
+               <h3 class=" text-xl p-2 m-3  text-green-400">{{branddetails.name}}</h3>  
+         </div>    
+ </div>
+    @for (item of brandlist; track item._id) {
+     <div class="col-lg-3 my-2 p-10" (click)="displaybranddetails(item._id)"> 
+            <div class="p-4   col-12 flex flex-col items-center bg-white  product ">
+                <img [src]=item.image [alt]=item.name class="w-100">          
+                <h3 class="text-green-300 text-xl">{{item.name}}</h3>
+            </div>
+ 
+           </div>
+    }
+        
+         
+    </section>
